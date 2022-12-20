@@ -17,6 +17,7 @@ class FirstViewController: UIViewController, TextFieldChangedDelegate {
 
     @IBOutlet weak var delegateLabel: UILabel!
     @IBOutlet weak var notificationCenterLabel: UILabel!
+    @IBOutlet weak var closureLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +29,20 @@ class FirstViewController: UIViewController, TextFieldChangedDelegate {
     }
     
     func textFieldChanged(text: String) {
-        delegateLabel.text = text
+        delegateLabel.text = "Delegate: \(text)"
     }
     
     @objc func textFieldChangedNotification(_ notification: Notification){
-        let text = notification.object!
-        notificationCenterLabel.text = text as? String
+        let text = notification.object! as? String
+        notificationCenterLabel.text = "Notification Center: \(text ?? "")"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? SecondViewController {
             destinationVC.delegate = self
+            destinationVC.textFieldChangedClosure = { (text) in
+                self.closureLabel.text = "Closure: \(text)"
+            }
         }
     }
     
