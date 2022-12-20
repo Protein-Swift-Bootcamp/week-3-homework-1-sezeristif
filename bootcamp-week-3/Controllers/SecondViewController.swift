@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class SecondViewController: UIViewController {
     
     let notificationCenter = NotificationCenter.default
