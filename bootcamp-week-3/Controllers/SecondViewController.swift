@@ -11,6 +11,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    let notificationCenter = NotificationCenter.default
+    
     var delegate: TextFieldChangedDelegate?
     
     @IBOutlet weak var textField: UITextField!
@@ -18,14 +20,15 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 
     @IBAction func submitTextButtonPressed(_ sender: Any) {
         let text = textField.text ?? ""
         delegate?.textFieldChanged(text: text)
+        
+        notificationCenter.post(name: Notification.Name("TextFieldChanged"), object: text)
+        
+        self.dismiss(animated: true)
     }
     
 
