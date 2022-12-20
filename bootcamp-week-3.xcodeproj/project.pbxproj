@@ -60,10 +60,9 @@
 		E52EA87E29523A10008645EB /* bootcamp-week-3 */ = {
 			isa = PBXGroup;
 			children = (
+				E52EA89729523C52008645EB /* Controllers */,
 				E52EA87F29523A10008645EB /* AppDelegate.swift */,
 				E52EA88129523A10008645EB /* SceneDelegate.swift */,
-				E52EA89329523A43008645EB /* SecondViewController.swift */,
-				E52EA88329523A10008645EB /* FirstViewController.swift */,
 				E52EA88529523A10008645EB /* Main.storyboard */,
 				E52EA88829523A11008645EB /* Assets.xcassets */,
 				E52EA88A29523A11008645EB /* LaunchScreen.storyboard */,
@@ -71,6 +70,15 @@
 				E52EA89529523BC6008645EB /* .gitignore */,
 			);
 			path = "bootcamp-week-3";
+			sourceTree = "<group>";
+		};
+		E52EA89729523C52008645EB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E52EA89329523A43008645EB /* SecondViewController.swift */,
+				E52EA88329523A10008645EB /* FirstViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
